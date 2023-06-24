@@ -1,14 +1,27 @@
+import { useState } from 'react';
 import './Controller.css';
 import Welcome from '../Pages/Welcome/Welcome';
 import Hotels from '../Pages/Hotels/Hotels';
-import HotelSlider from '../Components/ModalWindows/HotelSlider';
+import ModalSlider from '../Components/ModalWindows/ModalSlider';
 
 function Controller() {
+  const [isSliderOpen, setIsSliderOpen] = useState(false);
+
+  const openSlider = () => {
+    setIsSliderOpen(true);
+  };
+
+  const closeSlider = e => {
+    if (e.currentTarget === e.target) {
+      setIsSliderOpen(false);
+    }
+  };
+
   return (
     <div className="App wrapper min-h-screen block">
-      <HotelSlider />
+      {isSliderOpen && <ModalSlider closeSlider={closeSlider} />}
       <Welcome />
-      <Hotels />
+      <Hotels openSlider={openSlider} />
     </div>
   );
 }

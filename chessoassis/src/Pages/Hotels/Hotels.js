@@ -2,7 +2,7 @@ import HotelCard from '../../Components/Cards/HotelCard';
 import SectionHeader from '../../Components/SectionHeader/SectionHeader';
 import './Hotels.css';
 
-export default function Hotels() {
+export default function Hotels(props) {
   return (
     <section className="hotels__wrapper">
       <div className="hotels__container _container">
@@ -11,12 +11,12 @@ export default function Hotels() {
           text={'The most searched hotels in March'}
         />
         <div className="hotels__grid">
-          <HotelCard />
-          <HotelCard />
-          <HotelCard />
-          <HotelCard />
-          <HotelCard />
-          <HotelCard />
+          <HotelCard openSlider={props.openSlider} />
+          <HotelCard openSlider={props.openSlider} />
+          <HotelCard openSlider={props.openSlider} />
+          <HotelCard openSlider={props.openSlider} />
+          <HotelCard openSlider={props.openSlider} />
+          <HotelCard openSlider={props.openSlider} />
         </div>
       </div>
     </section>

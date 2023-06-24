@@ -20,6 +20,7 @@ export default function HotelCard(props) {
       className="card _ibg"
       onMouseEnter={mouseEnterHandler}
       onMouseLeave={mouseLeaveHandler}
+      onClick={props.openSlider}
     >
       <div className={`card__label ${isHovered ? 'show' : ''} `}>
         <CardLabel text={'Sensei Lanai, A Four Seasons Resort'} noOfStars={3} />

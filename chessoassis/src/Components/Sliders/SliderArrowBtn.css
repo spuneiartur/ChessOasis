@@ -1,0 +1,38 @@
+.btn__slider {
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 100;
+    transition: all .3s ease-in-out;
+}
+
+.btn__slider.left {
+    left: 0;
+}
+
+.btn__slider.right {
+    right: 0;
+}
+
+.arrow__slider {
+    border: solid var(--white);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+}
+
+.arrow__slider.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.arrow__slider.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
