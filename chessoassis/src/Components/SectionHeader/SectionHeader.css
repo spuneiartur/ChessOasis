@@ -1,0 +1,21 @@
+.section-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 75%;
+    margin: 30px auto;
+}
+
+.section-header__title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    color: var(--main__dark);
+}
+
+.section-header__text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: var(--main__dark);
+    margin: 20px 0;
+}
