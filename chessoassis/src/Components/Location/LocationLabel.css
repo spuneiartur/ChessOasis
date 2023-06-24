@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    gap: 5px;
+    z-index: 5;
+    padding: 10px 5px;
+}
+
+.icon {
+    color: var(--white);
+
+}
+
+.location {
+    color: var(--white);
+    font-style: italic;
+    font-size: 20px;
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Hotel A",
+    "location": "Location A",
+    "images": ["image1.jpg", "image2.jpg", "image3.jpg"],
+    "stars": 4,
+    "description": "Description of Hotel A",
+    "mainImg": "mainImage1.jpg"
+  },
+  {
+    "name": "Hotel B",
+    "location": "Location B",
+    "images": ["image4.jpg", "image5.jpg", "image6.jpg"],
+    "stars": 5,
+    "description": "Description of Hotel B",
+    "mainImg": "mainImage2.jpg"
+  },
+  {
+    "name": "Hotel C",
+    "location": "Location C",
+    "images": ["image7.jpg", "image8.jpg", "image9.jpg"],
+    "stars": 3,
+    "description": "Description of Hotel C",
+    "mainImg": "mainImage3.jpg"
+  },
+  {
+    "name": "Hotel D",
+    "location": "Location D",
+    "images": ["image10.jpg", "image11.jpg", "image12.jpg"],
+    "stars": 4,
+    "description": "Description of Hotel D",
+    "mainImg": "mainImage4.jpg"
+  },
+  {
+    "name": "Hotel E",
+    "location": "Location E",
+    "images": ["image13.jpg", "image14.jpg", "image15.jpg"],
+    "stars": 5,
+    "description": "Description of Hotel E",
+    "mainImg": "mainImage5.jpg"
+  },
+  {
+    "name": "Hotel F",
+    "location": "Location F",
+    "images": ["image16.jpg", "image17.jpg", "image18.jpg"],
+    "stars": 4,
+    "description": "Description of Hotel F",
+    "mainImg": "mainImage6.jpg"
+  }
+]

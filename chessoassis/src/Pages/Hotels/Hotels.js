@@ -1,3 +1,4 @@
+import HotelCard from '../../Components/Cards/HotelCard';
 import SectionHeader from '../../Components/SectionHeader/SectionHeader';
 import './Hotels.css';
 
@@ -9,7 +10,14 @@ export default function Hotels() {
           title={'Our hotels'}
           text={'The most searched hotels in March'}
         />
-        <div className="hotels__grid"></div>
+        <div className="hotels__grid">
+          <HotelCard />
+          <HotelCard />
+          <HotelCard />
+          <HotelCard />
+          <HotelCard />
+          <HotelCard />
+        </div>
       </div>
     </section>
   );

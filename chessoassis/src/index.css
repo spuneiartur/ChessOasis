@@ -140,3 +140,9 @@ h6 {
   left: 0;
   /* object-fit: cover; */
 }
+
+._hide {
+  display: none;
+  /* transform: translateY(+200%); */
+
+}
