@@ -8,7 +8,10 @@ export default function Hotels(props) {
       <div className="hotels__container _container">
         <SectionHeader
           title={'Our hotels'}
-          text={'The most searched hotels in March'}
+          text={`The most searched hotels in ${new Date().toLocaleString(
+            'default',
+            { month: 'long' }
+          )}`}
         />
         <div className="hotels__grid">
           <HotelCard openSlider={props.openSlider} />

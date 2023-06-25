@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Unrivaled Customer Satisfaction",
+    "description": "Our top priority is ensuring your utmost satisfaction, providing personalized service and exceeding your expectations at every turn.",
+    "icon": "customer-satisfaction-icon"
+  },
+  {
+    "title": "Seamless Booking Experience",
+    "description": "Enjoy a user-friendly platform, hassle-free reservations, and personalized customer support for a smooth journey.",
+    "icon": "booking-experience-icon"
+  },
+  {
+    "title": "Unbeatable Value",
+    "description": "Experience exceptional value with competitive prices, exclusive discounts, and special perks for our valued guests.",
+    "icon": "value-icon"
+  },
+  {
+    "title": "Luxurious Accommodations",
+    "description": "Discover a selection of luxurious accommodations tailored to your preferences, ensuring a comfortable and unforgettable stay.",
+    "icon": "accommodations-icon"
+  },
+  {
+    "title": "World-Class Dining",
+    "description": "Savor exquisite cuisine prepared by renowned chefs, offering a diverse range of culinary delights to tantalize your taste buds.",
+    "icon": "dining-icon"
+  },
+  {
+    "title": "Unforgettable Experiences",
+    "description": "Immerse yourself in unforgettable experiences, from exciting tours and activities to relaxing spa treatments and more.",
+    "icon": "experiences-icon"
+  }
+]

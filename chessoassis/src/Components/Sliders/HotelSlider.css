@@ -1,4 +1,4 @@
-.slider {
+.hotel__slider {
     position: relative;
     width: 100%;
     height: 100%;
@@ -8,11 +8,12 @@
 
 }
 
-.slider__content {
+.hotel__slider_content {
     width: 100%;
     height: 100%;
 }
 
-.slider__img {
+.hotel__slider_img {
     /* object-fit: cover; */
+    transition: transform 0.5s ease-in-out;
 }

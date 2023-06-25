@@ -7,6 +7,8 @@
     --main__dark: #015859;
     --main__light: #68a691;
     --white: #fafafa;
+    --font__title: 'Roboto', sans-serif;
+    --font__text: 'Open Sans', sans-serif;
   }
 
   html {
