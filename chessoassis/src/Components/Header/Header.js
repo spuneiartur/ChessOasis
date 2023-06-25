@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.css';
-import chessLogo from '../../Assets/Header/chess.png';
 
 export default function Header() {
   return (
@@ -8,7 +7,11 @@ export default function Header() {
       <div className="header__container">
         <a href="/" className="header__logo">
           <div className="header__logo-ibg _ibg">
-            <img src={chessLogo} alt="Logo" className="header__logo-image" />
+            <img
+              src={'/Assets/Header/chess.png'}
+              alt="Logo"
+              className="header__logo-image"
+            />
           </div>
           <h1 className="header__logo-title">ChessOasis.co</h1>
         </a>
