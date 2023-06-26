@@ -9,6 +9,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import BookNow from '../Pages/BookNow/BookNow';
+import Testimonials from '../Pages/Testimonials/Testimonials';
 
 // This exports the whole icon packs for Brand and Solid.
 library.add(fas, far);
@@ -34,6 +35,7 @@ function Controller() {
       <Deals />
       <AboutUs />
       <BookNow />
+      <Testimonials />
     </div>
   );
 }
