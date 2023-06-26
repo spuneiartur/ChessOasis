@@ -1,0 +1,30 @@
+.booknow__section {
+    margin: 90px 0;
+}
+
+.booknow__container {
+    width: 100%;
+    height: 890px;
+
+}
+
+.booknow__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 0;
+
+}
+
+.book__now_image {
+    flex: 1 1 50%;
+}
+
+.book__now_image img {
+    object-fit: cover;
+}
+
+.booknow__form_box {
+    flex: 1 1 50%;
+    padding: 30px;
+}

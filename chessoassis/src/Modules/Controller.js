@@ -8,6 +8,7 @@ import AboutUs from '../Pages/AboutUs/AboutUs';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+import BookNow from '../Pages/BookNow/BookNow';
 
 // This exports the whole icon packs for Brand and Solid.
 library.add(fas, far);
@@ -32,6 +33,7 @@ function Controller() {
       <Hotels openSlider={openSlider} />
       <Deals />
       <AboutUs />
+      <BookNow />
     </div>
   );
 }

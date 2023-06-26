@@ -11,11 +11,12 @@
     font-family: 'Roboto', sans-serif;
     font-size: 36px;
     color: var(--main__dark);
+    margin: 10px 0;
 }
 
 .section-header__text {
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     color: var(--main__dark);
-    margin: 20px 0;
+    margin: 10px 0;
 }

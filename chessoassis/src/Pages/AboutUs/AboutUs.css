@@ -3,6 +3,8 @@
 .about__bg {
     width: 100%;
     height: 540px;
+    display: flex;
+    align-items: center;
 }
 
 .about__bg img {
@@ -11,6 +13,17 @@
     z-index: -1;
 }
 
-.about__container {}
+.about__container {
+    width: 100%;
+    overflow-x: hidden;
+    perspective: 1000px;
+}
 
-.about__content {}
+.about__content {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    transform-style: preserve-3d;
+
+}
