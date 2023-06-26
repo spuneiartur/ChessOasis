@@ -1,0 +1,37 @@
+.footer__section {
+    background-color: #292E32;
+    color: #fafafa;
+    padding: 2.5rem 0;
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.footer__container>*:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+.footer__container h2 {
+    font-size: 30px;
+    font-family: var(--font__title);
+    cursor: pointer;
+}
+
+.footer__container p {
+    font-size: 16px;
+    font-style: italic;
+
+
+}
+
+.footer__socials {}
+
+.footer__socials>* {
+    margin: 0 8px;
+    font-size: 20px;
+}

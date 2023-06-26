@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Net Reynolds",
+    "testimonial": "My stay at this hotel was absolutely fantastic. The attention to detail and level of service provided by the staff were impeccable. The rooms were elegant and comfortable, and the amenities exceeded my expectations. I highly recommend this hotel to anyone looking for a memorable experience.",
+    "rating": 5,
+    "image": "/Assets/Testimonials/cust_1.jpg"
+  },
+  {
+    "name": "Emily Johnson",
+    "testimonial": "I had an amazing experience staying at this hotel. The staff was friendly and attentive, and the accommodations were luxurious. I would highly recommend it!",
+    "rating": 5,
+    "image": "/Assets/Testimonials/cust_6.jpg"
+  },
+  {
+    "name": "David Laggott",
+    "testimonial": "The service at this hotel exceeded my expectations. The staff went above and beyond to ensure my stay was comfortable and enjoyable. I will definitely be returning!",
+    "rating": 5,
+    "image": "/Assets/Testimonials/cust_2.jpg"
+  },
+  {
+    "name": "Sophia Davis",
+    "testimonial": "I can't say enough good things about this hotel. The rooms were spacious and beautifully decorated, and the amenities were top-notch. I had a fantastic time during my stay.",
+    "rating": 5,
+    "image": "/Assets/Testimonials/cust_3.jpg"
+  },
+  {
+    "name": "Oliver Wilson",
+    "testimonial": "This hotel provided the perfect combination of relaxation and entertainment. The pool area was stunning, and the on-site restaurant served delicious meals. I would give it 5 stars!",
+    "rating": 5,
+    "image": "/Assets/Testimonials/cust_4.jpg"
+  },
+  {
+    "name": "Ava Thompson",
+    "testimonial": "I had a wonderful experience at this hotel. The staff was friendly and accommodating, and the location was convenient. I would definitely recommend it to others.",
+    "rating": 4,
+    "image": "/Assets/Testimonials/cust_5.jpg"
+  }
+]
