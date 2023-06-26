@@ -3,7 +3,7 @@ import './BookNow.css';
 
 export default function BookNow() {
   return (
-    <section className="booknow__section">
+    <section className="booknow__section section" id="booknow-section">
       <div className="booknow__container _container">
         <div className="booknow__content">
           <div className="book__now_image _ibg">

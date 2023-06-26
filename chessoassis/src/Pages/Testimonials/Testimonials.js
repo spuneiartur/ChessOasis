@@ -41,7 +41,10 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="testimonials__section">
+    <section
+      className="testimonials__section section"
+      id="testimonials-section"
+    >
       <SectionHeader
         title={'Guest Testimonials'}
         text={'Hear What Our Visitors Have to Say about ChessOasis!'}

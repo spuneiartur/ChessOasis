@@ -4,7 +4,7 @@ import ButtonForImages from '../../Components/Buttons/ButtonForImages';
 
 export default function Deals() {
   return (
-    <section className="deals__section">
+    <section className="deals__section section" id="deals-section">
       <SectionHeader
         title={'Exclusive Deals and Irresistible Discounts'}
         text={'Unlock Exceptional Savings at ChessOasis!'}
@@ -19,7 +19,7 @@ export default function Deals() {
               seasonal discount. Immerse yourself in luxury, while enjoying
               incredible savings on your next unforgettable getaway.
             </div>
-            <ButtonForImages text={'book now'} />
+            <ButtonForImages text={'book now'} scrollTo={'#booknow-section'} />
           </div>
         </div>
       </div>

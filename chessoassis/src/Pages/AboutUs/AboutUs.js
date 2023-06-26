@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './AboutUs.css';
 import SectionHeader from '../../Components/SectionHeader/SectionHeader';
 import InfoCard from '../../Components/Cards/InfoCard';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SliderArrowBtn from '../../Components/Sliders/SliderArrowBtn';
 
 export default function AboutUs() {
@@ -57,7 +56,7 @@ export default function AboutUs() {
   };
 
   return (
-    <section className="about__section">
+    <section className="about__section section" id="about-section">
       <SectionHeader
         title={'Why Choose Us'}
         text={
@@ -90,6 +89,7 @@ export default function AboutUs() {
                 title={card.title}
                 text={card.description}
                 btnText={'see reviews'}
+                btnScrollTo={'#testimonials-section'}
               />
             ))}
           </div>

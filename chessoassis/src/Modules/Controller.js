@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Controller.css';
 import Welcome from '../Pages/Welcome/Welcome';
 import Hotels from '../Pages/Hotels/Hotels';
@@ -13,27 +13,28 @@ import BookNow from '../Pages/BookNow/BookNow';
 import Testimonials from '../Pages/Testimonials/Testimonials';
 import Footer from '../Components/Footers/Footer';
 
-// This exports the whole icon packs for Brand and Solid.
+// This exports the whole icon packs for Brand and Solid and Regular.
 library.add(fas, far, fab);
 
 function Controller() {
+  
+  // States
   const [isSliderOpen, setIsSliderOpen] = useState(false);
 
-  const openSlider = () => {
-    setIsSliderOpen(true);
-  };
-
-  const closeSlider = e => {
-    if (e.currentTarget === e.target) {
-      setIsSliderOpen(false);
-    }
-  };
-
+ 
   return (
     <div className="App wrapper min-h-screen block">
-      {isSliderOpen && <ModalSlider closeSlider={closeSlider} />}
+      {isSliderOpen && (
+        <ModalSlider
+          closeSlider={e => {
+            if (e.currentTarget === e.target) {
+              setIsSliderOpen(false);
+            }
+          }}
+        />
+      )}
       <Welcome />
-      <Hotels openSlider={openSlider} />
+      <Hotels openSlider={() => setIsSliderOpen(true)} />
       <Deals />
       <AboutUs />
       <BookNow />

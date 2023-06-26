@@ -4,7 +4,7 @@ import './Hotels.css';
 
 export default function Hotels(props) {
   return (
-    <section className="hotels__wrapper">
+    <section className="hotels__section section" id="hotels-section">
       <div className="hotels__container _container">
         <SectionHeader
           title={'Our hotels'}

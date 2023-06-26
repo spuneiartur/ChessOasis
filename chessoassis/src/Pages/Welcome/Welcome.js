@@ -20,7 +20,7 @@ export default function Welcome() {
               Welcome to ChessOasis, your gateway to exquisite accommodations,
               personalized service, and unforgettable travel experiences.
             </p>
-            <ButtonForImages text={'Read more'} />
+            <ButtonForImages text={'See hotels'} scrollTo={'#hotels-section'} />
           </div>
         </div>
       </div>

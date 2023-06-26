@@ -148,3 +148,7 @@ h6 {
   /* transform: translateY(+200%); */
 
 }
+
+._section__hidden {
+  transform: translateY(30%);
+}
