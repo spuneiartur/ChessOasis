@@ -4,8 +4,12 @@ import AnimationDots from '../LoadingAnimations/AnimationDots';
 import './BookForm.css';
 import ComputedBookPrice from '../ComputedPrice/ComputedBookPrice';
 import InputErrorBox from '../ErrorBoxes/InputErrorBox';
+import FormInput from './FormInput';
+import FormCheckBox from './FormCheckBox';
+import FormSelect from './FormSelect';
 
 export default function BookForm({
+  title,
   hotels,
   setSelectedHotel,
   formData,
@@ -45,59 +49,62 @@ export default function BookForm({
 
   return (
     <form className="book__form">
-      <h2 className="book__form_title">Book Now</h2>
-      <label htmlFor="f-name">Full Name</label>
-      <input
-        type="text"
-        id="f-name"
-        name="fname"
-        required
-        className={error.name ? 'error' : undefined}
+      <h2 className="book__form_title">{title}</h2>
+      <FormInput
+        label={'Full Name'}
+        type={'text'}
+        id={'book__hotel--name'}
+        placeholder={'Enter your full name'}
+        required={true}
+        errorMessage={error.name ? errorMessage : undefined}
         onBlur={nameInputOnBlur}
         onFocus={nameOnFocus}
         onChange={e => setFormData({ ...formData, name: e.target.value })}
+        error={error.name}
       />
-      <label htmlFor="select-hotels">Select preferred hotel:</label>
-
-      <select
-        name="hotels"
-        id="select-hotels"
-        required
-        defaultValue={''}
-        onChange={hotelSelectOnChange}
-      >
-        <option value="0">--Please choose an option--</option>
-        {hotels.map(hotel => (
+      <FormSelect
+        label={'Select preferred hotel'}
+        id={'book__hotel--select'}
+        options={hotels}
+        onChangeHandler={hotelSelectOnChange}
+        children={hotels.map(hotel => (
           <option key={hotel.id} value={hotel.id}>
             {hotel.name}
           </option>
         ))}
-      </select>
-      <label htmlFor="check-in">Check-in:</label>
-      <input type="date" id="input-date" name="date" required />
-      <label htmlFor="select-nights">Number of nights:</label>
-      <select name="nights" id="select-nights" required defaultValue={'7'}>
-        <option value="3">3</option>
-        <option value="7">7</option>
-        <option value="10">10</option>
-        <option value="14">14</option>
-        <option value="30">30</option>
-      </select>
-      <label htmlFor="input-guests">Number of guests</label>
-      <input
-        type="number"
-        id="input-guests"
-        required
+      />
+
+      <FormInput
+        label={'Check-in date'}
+        type={'date'}
+        id={'book__hotel--check-in'}
+        required={true}
+      />
+      <FormSelect
+        label={'Number of nights'}
+        id={'book__hotel--nights'}
+        required={true}
+        defaultValue={'7'}
+        children={[3, 7, 10, 14, 30].map((n, index) => (
+          <option key={index} value={n}>
+            {n}
+          </option>
+        ))}
+      />
+
+      <FormInput
+        label={'Number of guests'}
+        type={'number'}
+        id={'book__hotel--guests'}
+        required={true}
         defaultValue={2}
         min="1"
         max="3"
       />
-      <div className="checkbox__container">
-        <label htmlFor="breakfast-checkbox">
-          <input type="checkbox" id="breakfast-checkbox" className="error" />
-          <span className="checkbox__custom"></span>Breakfast
-        </label>
-      </div>
+      <FormCheckBox
+        label={'Breakfast'}
+        id={'book__hotel_checkbox--breakfast'}
+      />
       <ComputedBookPrice />
       <ButtonForWhite
         text={'Submit'}

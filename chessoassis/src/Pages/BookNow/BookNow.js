@@ -24,6 +24,7 @@ export default function BookNow({
           </div>
           <div className="booknow__form_box">
             <BookForm
+              title={'Book Now'}
               hotels={hotels}
               setSelectedHotel={setSelectedHotel}
               formData={formData}
