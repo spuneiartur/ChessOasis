@@ -3,33 +3,33 @@ import './HotelSlider.css';
 import SliderArrowBtn from './SliderArrowBtn';
 import SliderDots from './SliderDots';
 
-export default function HotelSlider() {
+export default function HotelSlider({ hotel }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [
-    '../../Assets/Hotels/Sensei Lanai Hawaii/main.jpg',
-    '../../Assets/Hotels/Sensei Lanai Hawaii/img1.jpg',
-    '../../Assets/Hotels/Sensei Lanai Hawaii/img2.jpg',
-    '../../Assets/Hotels/Sensei Lanai Hawaii/img3.jpg',
-    '../../Assets/Hotels/Sensei Lanai Hawaii/img4.jpg',
-    '../../Assets/Hotels/Sensei Lanai Hawaii/img5.jpg',
+    '/Assets/Hotels/Sensei Lanai Hawaii/main.jpg',
+    '/Assets/Hotels/Sensei Lanai Hawaii/img1.jpg',
+    '/Assets/Hotels/Sensei Lanai Hawaii/img2.jpg',
+    '/Assets/Hotels/Sensei Lanai Hawaii/img3.jpg',
+    '/Assets/Hotels/Sensei Lanai Hawaii/img4.jpg',
+    '/Assets/Hotels/Sensei Lanai Hawaii/img5.jpg',
   ];
 
+  console.log(hotel);
+
   const onClickRightHandler = () => {
-    if (currentSlide === images.length - 1) {
+    if (currentSlide === hotel.images.length - 1) {
       setCurrentSlide(0);
     } else {
       setCurrentSlide(currentSlide + 1);
-      console.log(currentSlide);
     }
   };
 
   const onClickLeftHandler = () => {
-    if (currentSlide === images.length - 1) {
-      setCurrentSlide(0);
+    if (currentSlide === 0) {
+      setCurrentSlide(hotel.images.length - 1);
     } else {
       setCurrentSlide(currentSlide - 1);
-      console.log(currentSlide);
     }
   };
 
@@ -38,7 +38,7 @@ export default function HotelSlider() {
       <SliderArrowBtn side="left" onClickChangeSlide={onClickLeftHandler} />
       <SliderArrowBtn side="right" onClickChangeSlide={onClickRightHandler} />
       <div className="hotel__slider_content _ibg">
-        {images.map((img, index) => (
+        {hotel.images.map((img, index) => (
           <img
             key={index}
             src={img}
@@ -51,7 +51,7 @@ export default function HotelSlider() {
         ))}
       </div>
       <SliderDots
-        count={images.length}
+        count={hotel.images.length}
         currentSlide={currentSlide}
         changeSlide={setCurrentSlide}
       />

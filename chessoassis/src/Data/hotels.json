@@ -1,50 +1,93 @@
 [
   {
-    "name": "Hotel A",
-    "location": "Location A",
-    "images": ["image1.jpg", "image2.jpg", "image3.jpg"],
+    "name": "Aqua Luxury Suites ",
+    "location": "Santorini, Greece",
+    "images": [
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/main.jpg",
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/img1.jpg",
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/img2.jpg",
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/img3.jpg",
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/img4.jpg",
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/img5.jpg",
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/img6.jpg",
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/img7.jpg"
+    ],
     "stars": 4,
-    "description": "Description of Hotel A",
-    "mainImg": "mainImage1.jpg"
+    "mainImg": "/Assets/Hotels/Aqua Luxury Suites Santorini/main.jpg"
   },
   {
-    "name": "Hotel B",
-    "location": "Location B",
-    "images": ["image4.jpg", "image5.jpg", "image6.jpg"],
+    "name": "Grand Hyatt",
+    "location": "Bali, Indonesia",
+    "images": [
+      "/Assets/Hotels/Grand Hyatt Bali/main.jpg",
+      "/Assets/Hotels/Grand Hyatt Bali/img1.jpg",
+      "/Assets/Hotels/Grand Hyatt Bali/img2.jpg",
+      "/Assets/Hotels/Grand Hyatt Bali/img3.jpg",
+      "/Assets/Hotels/Grand Hyatt Bali/img4.jpg",
+      "/Assets/Hotels/Grand Hyatt Bali/img5.jpg",
+      "/Assets/Hotels/Grand Hyatt Bali/img6.jpg"
+    ],
     "stars": 5,
-    "description": "Description of Hotel B",
-    "mainImg": "mainImage2.jpg"
+    "mainImg": "/Assets/Hotels/Grand Hyatt Bali/main.jpg"
   },
   {
-    "name": "Hotel C",
-    "location": "Location C",
-    "images": ["image7.jpg", "image8.jpg", "image9.jpg"],
+    "name": "Hotel Helios Costa Tropical",
+    "location": "Granada, Spain",
+    "images": [
+      "/Assets/Hotels/Hotel Helios Costa Tropical Granada/main.jpg",
+      "/Assets/Hotels/Hotel Helios Costa Tropical Granada/img1.jpg",
+      "/Assets/Hotels/Hotel Helios Costa Tropical Granada/img2.jpg",
+      "/Assets/Hotels/Hotel Helios Costa Tropical Granada/img3.jpg",
+      "/Assets/Hotels/Hotel Helios Costa Tropical Granada/img4.jpg",
+      "/Assets/Hotels/Hotel Helios Costa Tropical Granada/img5.jpg",
+      "/Assets/Hotels/Hotel Helios Costa Tropical Granada/img6.jpg"
+    ],
     "stars": 3,
-    "description": "Description of Hotel C",
-    "mainImg": "mainImage3.jpg"
+    "mainImg": "/Assets/Hotels/Hotel Helios Costa Tropical Granada/main.jpg"
   },
   {
-    "name": "Hotel D",
-    "location": "Location D",
-    "images": ["image10.jpg", "image11.jpg", "image12.jpg"],
+    "name": "Meliá Palma Bay",
+    "location": "Palma de Mallorca, Spain",
+    "images": [
+      "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/main.jpg",
+      "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/img1.jpg",
+      "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/img2.jpg",
+      "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/img3.jpg",
+      "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/img4.jpg",
+      "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/img5.jpg",
+      "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/img6.jpg"
+    ],
     "stars": 4,
-    "description": "Description of Hotel D",
-    "mainImg": "mainImage4.jpg"
+    "mainImg": "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/main.jpg"
   },
   {
-    "name": "Hotel E",
-    "location": "Location E",
-    "images": ["image13.jpg", "image14.jpg", "image15.jpg"],
+    "name": "Rixos Premium",
+    "location": "Antalya, Turkey",
+    "images": [
+      "/Assets/Hotels/Rixos Premium Antalya/main.jpg",
+      "/Assets/Hotels/Rixos Premium Antalya/img1.jpg",
+      "/Assets/Hotels/Rixos Premium Antalya/img2.jpg",
+      "/Assets/Hotels/Rixos Premium Antalya/img3.jpg",
+      "/Assets/Hotels/Rixos Premium Antalya/img4.jpg",
+      "/Assets/Hotels/Rixos Premium Antalya/img5.jpg",
+      "/Assets/Hotels/Rixos Premium Antalya/img6.jpg",
+      "/Assets/Hotels/Rixos Premium Antalya/img7.jpg"
+    ],
     "stars": 5,
-    "description": "Description of Hotel E",
-    "mainImg": "mainImage5.jpg"
+    "mainImg": "/Assets/Hotels/Rixos Premium Antalya/main.jpg"
   },
   {
-    "name": "Hotel F",
-    "location": "Location F",
-    "images": ["image16.jpg", "image17.jpg", "image18.jpg"],
+    "name": "Sensei Lanai",
+    "location": "Hawaii, USA",
+    "images": [
+      "/Assets/Hotels/Sensei Lanai Hawaii/main.jpg",
+      "/Assets/Hotels/Sensei Lanai Hawaii/img1.jpg",
+      "/Assets/Hotels/Sensei Lanai Hawaii/img2.jpg",
+      "/Assets/Hotels/Sensei Lanai Hawaii/img3.jpg",
+      "/Assets/Hotels/Sensei Lanai Hawaii/img4.jpg",
+      "/Assets/Hotels/Sensei Lanai Hawaii/img5.jpg"
+    ],
     "stars": 4,
-    "description": "Description of Hotel F",
-    "mainImg": "mainImage6.jpg"
+    "mainImg": "/Assets/Hotels/Sensei Lanai Hawaii/main.jpg"
   }
 ]

@@ -2,7 +2,7 @@ import HotelCard from '../../Components/Cards/HotelCard';
 import SectionHeader from '../../Components/SectionHeader/SectionHeader';
 import './Hotels.css';
 
-export default function Hotels(props) {
+export default function Hotels({ openSlider, hotels }) {
   return (
     <section className="hotels__section section" id="hotels-section">
       <div className="hotels__container _container">
@@ -14,12 +14,9 @@ export default function Hotels(props) {
           )}`}
         />
         <div className="hotels__grid">
-          <HotelCard openSlider={props.openSlider} />
-          <HotelCard openSlider={props.openSlider} />
-          <HotelCard openSlider={props.openSlider} />
-          <HotelCard openSlider={props.openSlider} />
-          <HotelCard openSlider={props.openSlider} />
-          <HotelCard openSlider={props.openSlider} />
+          {hotels.map((hotel, index) => (
+            <HotelCard key={index} openSlider={openSlider} hotel={hotel} />
+          ))}
         </div>
       </div>
     </section>

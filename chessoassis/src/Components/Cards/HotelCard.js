@@ -3,7 +3,7 @@ import './HotelCard.css';
 import LocationLabel from '../Location/LocationLabel';
 import CardLabel from './CardLabel';
 
-export default function HotelCard(props) {
+export default function HotelCard({ openSlider, hotel }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const mouseEnterHandler = e => {
@@ -14,21 +14,22 @@ export default function HotelCard(props) {
     setIsHovered(false);
   };
 
+  const onClickHandler = e => {
+    openSlider(hotel);
+  };
+
   return (
     <div
       className="card _ibg"
       onMouseEnter={mouseEnterHandler}
       onMouseLeave={mouseLeaveHandler}
-      onClick={props.openSlider}
+      onClick={onClickHandler}
     >
       <div className={`card__label ${isHovered ? 'show' : ''} `}>
-        <CardLabel text={'Sensei Lanai, A Four Seasons Resort'} noOfStars={3} />
+        <CardLabel text={hotel.name} noOfStars={hotel.stars} />
       </div>
-      <LocationLabel text={'Hawaii'} isHovered={isHovered} />
-      <img
-        src={'/Assets/Hotels/Sensei Lanai Hawaii/main.jpg'}
-        alt="Background"
-      />
+      <LocationLabel text={hotel.location} isHovered={isHovered} />
+      <img src={hotel.mainImg} alt="Background" />
     </div>
   );
 }

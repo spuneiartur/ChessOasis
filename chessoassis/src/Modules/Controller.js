@@ -12,33 +12,44 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import BookNow from '../Pages/BookNow/BookNow';
 import Testimonials from '../Pages/Testimonials/Testimonials';
 import Footer from '../Components/Footers/Footer';
+import model from './Model';
 
 // This exports the whole icon packs for Brand and Solid and Regular.
 library.add(fas, far, fab);
 
 function Controller() {
-  
   // States
   const [isSliderOpen, setIsSliderOpen] = useState(false);
+  const [hotels, setHotels] = useState(model.getHotels());
+  const [currentHotel, setCurrentHotel] = useState({});
+  const [advantages, setAdvantages] = useState(model.getAdvantages());
+  const [testimonials, setTestimonials] = useState(model.getTestimonials());
 
- 
+  const openSlider = hotel => {
+    setCurrentHotel(hotel);
+    setIsSliderOpen(true);
+
+    console.log(currentHotel);
+    console.log(hotel);
+  };
+
+  const closeSlider = e => {
+    if (e.currentTarget === e.target) {
+      setIsSliderOpen(false);
+    }
+  };
+
   return (
     <div className="App wrapper min-h-screen block">
       {isSliderOpen && (
-        <ModalSlider
-          closeSlider={e => {
-            if (e.currentTarget === e.target) {
-              setIsSliderOpen(false);
-            }
-          }}
-        />
+        <ModalSlider closeSlider={closeSlider} hotel={currentHotel} />
       )}
       <Welcome />
-      <Hotels openSlider={() => setIsSliderOpen(true)} />
+      <Hotels openSlider={openSlider} hotels={hotels} />
       <Deals />
-      <AboutUs />
+      <AboutUs data={advantages} />
       <BookNow />
-      <Testimonials />
+      <Testimonials data={testimonials} />
       <Footer />
     </div>
   );
