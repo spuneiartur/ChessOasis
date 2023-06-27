@@ -27,6 +27,8 @@
 
 }
 
+
+
 .book__form input {
     padding: 15px 12px;
     border-radius: 20px;
@@ -34,9 +36,19 @@
     background-color: var(--input__color);
     width: 100%;
     margin: 0 0 25px 0;
-    cursor: pointer;
+
 
 }
+
+
+.book__form input.error,
+.book__form select.error {
+    border: 2px solid orangered;
+    color: orangered;
+    box-shadow: 1px 2px 0 0 rgb(236, 173, 150);
+}
+
+
 
 .book__form input[type='number'] {
     max-width: 80px;

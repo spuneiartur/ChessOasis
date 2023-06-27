@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "Aqua Luxury Suites ",
     "location": "Santorini, Greece",
     "images": [
@@ -13,9 +14,11 @@
       "/Assets/Hotels/Aqua Luxury Suites Santorini/img7.jpg"
     ],
     "stars": 4,
-    "mainImg": "/Assets/Hotels/Aqua Luxury Suites Santorini/main.jpg"
+    "mainImg": "/Assets/Hotels/Aqua Luxury Suites Santorini/main.jpg",
+    "price": 1000
   },
   {
+    "id": 2,
     "name": "Grand Hyatt",
     "location": "Bali, Indonesia",
     "images": [
@@ -28,9 +31,11 @@
       "/Assets/Hotels/Grand Hyatt Bali/img6.jpg"
     ],
     "stars": 5,
-    "mainImg": "/Assets/Hotels/Grand Hyatt Bali/main.jpg"
+    "mainImg": "/Assets/Hotels/Grand Hyatt Bali/main.jpg",
+    "price": 1200
   },
   {
+    "id": 3,
     "name": "Hotel Helios Costa Tropical",
     "location": "Granada, Spain",
     "images": [
@@ -43,9 +48,11 @@
       "/Assets/Hotels/Hotel Helios Costa Tropical Granada/img6.jpg"
     ],
     "stars": 3,
-    "mainImg": "/Assets/Hotels/Hotel Helios Costa Tropical Granada/main.jpg"
+    "mainImg": "/Assets/Hotels/Hotel Helios Costa Tropical Granada/main.jpg",
+    "price": 800
   },
   {
+    "id": 4,
     "name": "Meliá Palma Bay",
     "location": "Palma de Mallorca, Spain",
     "images": [
@@ -58,9 +65,11 @@
       "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/img6.jpg"
     ],
     "stars": 4,
-    "mainImg": "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/main.jpg"
+    "mainImg": "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/main.jpg",
+    "price": 900
   },
   {
+    "id": 5,
     "name": "Rixos Premium",
     "location": "Antalya, Turkey",
     "images": [
@@ -74,9 +83,11 @@
       "/Assets/Hotels/Rixos Premium Antalya/img7.jpg"
     ],
     "stars": 5,
-    "mainImg": "/Assets/Hotels/Rixos Premium Antalya/main.jpg"
+    "mainImg": "/Assets/Hotels/Rixos Premium Antalya/main.jpg",
+    "price": 1500
   },
   {
+    "id": 6,
     "name": "Sensei Lanai",
     "location": "Hawaii, USA",
     "images": [
@@ -88,6 +99,7 @@
       "/Assets/Hotels/Sensei Lanai Hawaii/img5.jpg"
     ],
     "stars": 4,
-    "mainImg": "/Assets/Hotels/Sensei Lanai Hawaii/main.jpg"
+    "mainImg": "/Assets/Hotels/Sensei Lanai Hawaii/main.jpg",
+    "price": 1100
   }
 ]

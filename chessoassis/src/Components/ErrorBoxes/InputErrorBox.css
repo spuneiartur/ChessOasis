@@ -1,0 +1,33 @@
+.error__box_container {
+    position: absolute;
+    top: 0;
+    right: -50%;
+
+    z-index: 2;
+}
+
+.error__box {
+    position: relative;
+    width: 100px;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.error__box::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #000;
+}
+
+.error__box_content {
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--main__dark);
+}

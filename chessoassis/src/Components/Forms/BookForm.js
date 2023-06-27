@@ -1,17 +1,77 @@
+import React, { useEffect, useState } from 'react';
 import ButtonForWhite from '../Buttons/ButtonForWhite';
+import AnimationDots from '../LoadingAnimations/AnimationDots';
 import './BookForm.css';
+import ComputedBookPrice from '../ComputedPrice/ComputedBookPrice';
+import InputErrorBox from '../ErrorBoxes/InputErrorBox';
 
-export default function BookForm(props) {
+export default function BookForm({
+  hotels,
+  setSelectedHotel,
+  formData,
+  setFormData,
+  validateName,
+}) {
+  const [animationIsActive, setAnimationIsActive] = useState(true);
+  const [error, setError] = useState({});
+  const [price, setPrice] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const hotelSelectOnChange = e => {
+    let selectedHotel = hotels.find(hotel => hotel.id === +e.target.value);
+    selectedHotel = selectedHotel ? selectedHotel : {};
+
+    setSelectedHotel(selectedHotel);
+  };
+
+  const nameInputOnBlur = e => {
+    const isError = !validateName(e.target.value, setErrorMessage);
+    if (isError) {
+      e.currentTarget.value = errorMessage;
+    }
+    setError(prevState => {
+      return { ...prevState, name: isError };
+    });
+  };
+
+  const nameOnFocus = e => {
+    if (error.name) {
+      e.currentTarget.value = '';
+      setError(prevState => {
+        return { ...prevState, name: false };
+      });
+    }
+  };
+
   return (
     <form className="book__form">
       <h2 className="book__form_title">Book Now</h2>
       <label htmlFor="f-name">Full Name</label>
-      <input type="text" id="f-name" name="fname" required />
+      <input
+        type="text"
+        id="f-name"
+        name="fname"
+        required
+        className={error.name ? 'error' : undefined}
+        onBlur={nameInputOnBlur}
+        onFocus={nameOnFocus}
+        onChange={e => setFormData({ ...formData, name: e.target.value })}
+      />
       <label htmlFor="select-hotels">Select preferred hotel:</label>
-      <select name="hotels" id="select-hotels" required defaultValue={''}>
-        <option value="">--Please choose an option--</option>
-        <option value="chess">Chess Hotel</option>
-        <option value="santorini">Santorini Hotel</option>
+
+      <select
+        name="hotels"
+        id="select-hotels"
+        required
+        defaultValue={''}
+        onChange={hotelSelectOnChange}
+      >
+        <option value="0">--Please choose an option--</option>
+        {hotels.map(hotel => (
+          <option key={hotel.id} value={hotel.id}>
+            {hotel.name}
+          </option>
+        ))}
       </select>
       <label htmlFor="check-in">Check-in:</label>
       <input type="date" id="input-date" name="date" required />
@@ -34,10 +94,11 @@ export default function BookForm(props) {
       />
       <div className="checkbox__container">
         <label htmlFor="breakfast-checkbox">
-          <input type="checkbox" id="breakfast-checkbox" />
+          <input type="checkbox" id="breakfast-checkbox" className="error" />
           <span className="checkbox__custom"></span>Breakfast
         </label>
       </div>
+      <ComputedBookPrice />
       <ButtonForWhite
         text={'Submit'}
         style={{ margin: '50px 0 0 0', width: '100%' }}

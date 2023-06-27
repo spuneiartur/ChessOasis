@@ -20,17 +20,19 @@ library.add(fas, far, fab);
 function Controller() {
   // States
   const [isSliderOpen, setIsSliderOpen] = useState(false);
-  const [hotels, setHotels] = useState(model.getHotels());
+  const [hotels, setHotels] = useState([]);
   const [currentHotel, setCurrentHotel] = useState({});
-  const [advantages, setAdvantages] = useState(model.getAdvantages());
-  const [testimonials, setTestimonials] = useState(model.getTestimonials());
+  const [advantages, setAdvantages] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
+  const [formData, setFormData] = useState({});
+
+  useEffect(() => {
+    model.initApplication(setHotels, setAdvantages, setTestimonials);
+  }, []);
 
   const openSlider = hotel => {
     setCurrentHotel(hotel);
     setIsSliderOpen(true);
-
-    console.log(currentHotel);
-    console.log(hotel);
   };
 
   const closeSlider = e => {
@@ -48,7 +50,12 @@ function Controller() {
       <Hotels openSlider={openSlider} hotels={hotels} />
       <Deals />
       <AboutUs data={advantages} />
-      <BookNow />
+      <BookNow
+        hotels={hotels}
+        formData={formData}
+        setFormData={setFormData}
+        validateName={model.validateInputedName}
+      />
       <Testimonials data={testimonials} />
       <Footer />
     </div>
