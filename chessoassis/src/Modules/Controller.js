@@ -55,6 +55,11 @@ function Controller() {
         formData={formData}
         setFormData={setFormData}
         validateName={model.validateInputedName}
+        validateCheckIn={model.validateCheckInDate}
+        validateGuests={model.validateGuests}
+        validateHotels={model.validateHotels}
+        validateNights={model.validateNights}
+        getHotelPrice={model.getHotelPrice}
       />
       <Testimonials data={testimonials} />
       <Footer />

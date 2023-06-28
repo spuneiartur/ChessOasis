@@ -7,18 +7,18 @@ export default function FormInput({
   id,
   placeholder,
   required,
-  errorMessage = undefined,
-  defaultValue = undefined,
-  min = undefined,
-  max = undefined,
-  onChange = undefined,
-  onFocus = undefined,
-  onBlur = undefined,
+  defaultValue,
+  min,
+  max,
+  onChange,
+  onFocus,
+  onBlur,
+  errorMessage,
   error = false,
 }) {
   return (
-    <div className="form__input_container">
-      {/* <InputErrorBox message={errorMessage} /> */}
+    <div className="form__input_container relative">
+      {error && <InputErrorBox message={errorMessage} />}
       <div className="form__input_label--wrapper">
         <label htmlFor={id}>{label + ':'}</label>
       </div>

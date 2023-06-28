@@ -1,4 +1,5 @@
 import './FormSelect.css';
+import InputErrorBox from '../ErrorBoxes/InputErrorBox';
 
 export default function FormSelect({
   label,
@@ -6,10 +7,13 @@ export default function FormSelect({
   required,
   defaultValue = null,
   children,
-  onChangeHandler,
+  onChange,
+  errorMessage,
+  error = false,
 }) {
   return (
-    <div className="form__select_container">
+    <div className="form__select_container relative">
+      {error && <InputErrorBox message={errorMessage} />}
       <div className="form__select_label--wrapper">
         <label htmlFor="select-hotels">{label}:</label>
       </div>
@@ -18,9 +22,9 @@ export default function FormSelect({
         id={id}
         required={required}
         defaultValue={defaultValue}
-        onChange={onChangeHandler}
+        onChange={onChange}
       >
-        <option value={null}>--Please choose an option--</option>
+        <option value={-1}>--Please choose an option--</option>
         {children}
       </select>
     </div>
