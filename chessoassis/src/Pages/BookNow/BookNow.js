@@ -7,6 +7,11 @@ export default function BookNow({
   formData,
   setFormData,
   validateName,
+  validateCheckIn,
+  validateGuests,
+  validateHotels,
+  validateNights,
+  getHotelPrice,
 }) {
   const [selectedHotel, setSelectedHotel] = useState({});
   const defaultImg = '/Assets/BookNow/form_img.jpg';
@@ -24,11 +29,20 @@ export default function BookNow({
           </div>
           <div className="booknow__form_box">
             <BookForm
+              title={'Book Now'}
               hotels={hotels}
               setSelectedHotel={setSelectedHotel}
               formData={formData}
               setFormData={setFormData}
+              nightsDefaultValue={7}
+              guestsDefaultValue={2}
+              breakfastDefaultValue={false}
               validateName={validateName}
+              validateCheckIn={validateCheckIn}
+              validateGuests={validateGuests}
+              validateHotels={validateHotels}
+              validateNights={validateNights}
+              getHotelPrice={getHotelPrice}
             />
           </div>
         </div>
