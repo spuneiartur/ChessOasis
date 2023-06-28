@@ -125,6 +125,15 @@ export default function BookForm({
     }
   };
 
+  const guestsOnChange = e => {
+    setFormData(prevState => {
+      return {
+        ...prevState,
+        guests: +e.target.value,
+      };
+    });
+  };
+
   // Hotels validation ---------------------------------------------
   const hotelSelectOnChange = e => {
     let selectedHotel = hotels.find(hotel => hotel.id === +e.target.value);
@@ -228,7 +237,7 @@ export default function BookForm({
         max="3"
         onBlur={guestsInputOnBlur}
         onFocus={guestsOnFocus}
-        onChange={e => setFormData({ ...formData, guests: e.target.value })}
+        onChange={guestsOnChange}
         error={error.guests}
         errorMessage={error.guests ? errorMessage.guests : undefined}
       />

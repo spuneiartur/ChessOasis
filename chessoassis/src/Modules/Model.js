@@ -47,41 +47,29 @@ class Model {
 
   validateInputedName(name, setErrorMessage) {
     if (name.length === 0) {
-      setErrorMessage(prevState => {
-        return { ...prevState, name: 'Please enter your name' };
-      });
-
+      if (setErrorMessage) {
+        setErrorMessage(prevState => {
+          return { ...prevState, name: 'Please enter your name' };
+        });
+      }
       return false;
     }
 
     if (name.length < 3) {
-      setErrorMessage(prevState => {
-        return { ...prevState, name: 'Name must be at least 3 characters' };
-      });
+      if (setErrorMessage) {
+        setErrorMessage(prevState => {
+          return { ...prevState, name: 'Name must be at least 3 characters' };
+        });
+      }
       return false;
     }
 
     if (name.split(' ').length < 2 || name.split(' ')[1].length === 0) {
-      setErrorMessage(prevState => {
-        return { ...prevState, name: 'Please enter your full name' };
-      });
-
-      return false;
-    }
-
-    return true;
-  }
-
-  validateInputedName(name) {
-    if (name.length === 0) {
-      return false;
-    }
-
-    if (name.length < 3) {
-      return false;
-    }
-
-    if (name.split(' ').length < 2 || name.split(' ')[1].length === 0) {
+      if (setErrorMessage) {
+        setErrorMessage(prevState => {
+          return { ...prevState, name: 'Please enter your full name' };
+        });
+      }
       return false;
     }
 
@@ -90,9 +78,11 @@ class Model {
 
   validateCheckInDate(date, setErrorMessage) {
     if (date.length === 0) {
-      setErrorMessage(prevState => {
-        return { ...prevState, checkIn: 'Please enter your check-in date' };
-      });
+      if (setErrorMessage) {
+        setErrorMessage(prevState => {
+          return { ...prevState, checkIn: 'Please enter your check-in date' };
+        });
+      }
       return false;
     }
 
@@ -100,25 +90,14 @@ class Model {
     const checkInDate = new Date(date);
 
     if (checkInDate < today) {
-      setErrorMessage(prevState => {
-        return { ...prevState, checkIn: 'Check-in date must be in the future' };
-      });
-
-      return false;
-    }
-
-    return true;
-  }
-
-  validateCheckInDate(date) {
-    if (date.length === 0) {
-      return false;
-    }
-
-    const today = new Date();
-    const checkInDate = new Date(date);
-
-    if (checkInDate < today) {
+      if (setErrorMessage) {
+        setErrorMessage(prevState => {
+          return {
+            ...prevState,
+            checkIn: 'Check-in date must be in the future',
+          };
+        });
+      }
       return false;
     }
 
@@ -127,50 +106,44 @@ class Model {
 
   validateGuests(guests, setErrorMessage) {
     if (!Number.isInteger(guests)) {
-      setErrorMessage(prevState => {
-        return {
-          ...prevState,
-          guests: 'Number of guests must be an integer value',
-        };
-      });
+      if (setErrorMessage) {
+        setErrorMessage(prevState => {
+          return {
+            ...prevState,
+            guests: 'Number of guests must be an integer value',
+          };
+        });
+      }
       return false;
     }
     if (guests < 0) {
-      setErrorMessage(prevState => {
-        return {
-          ...prevState,
-          guests: 'Number of guests must be a positive value',
-        };
-      });
+      if (setErrorMessage) {
+        setErrorMessage(prevState => {
+          return {
+            ...prevState,
+            guests: 'Number of guests must be a positive value',
+          };
+        });
+      }
       return false;
     }
     if (guests < 1) {
-      setErrorMessage(prevState => {
-        return { ...prevState, guests: 'Number of guests must be at least 1' };
-      });
+      if (setErrorMessage) {
+        setErrorMessage(prevState => {
+          return {
+            ...prevState,
+            guests: 'Number of guests must be at least 1',
+          };
+        });
+      }
       return false;
     }
     if (guests > 3) {
-      setErrorMessage(prevState => {
-        return { ...prevState, guests: 'Number of guests must be at most 3' };
-      });
-      return false;
-    }
-
-    return true;
-  }
-
-  validateGuests(guests) {
-    if (!Number.isInteger(guests)) {
-      return false;
-    }
-    if (guests < 0) {
-      return false;
-    }
-    if (guests < 1) {
-      return false;
-    }
-    if (guests > 3) {
+      if (setErrorMessage) {
+        setErrorMessage(prevState => {
+          return { ...prevState, guests: 'Number of guests must be at most 3' };
+        });
+      }
       return false;
     }
 
@@ -178,17 +151,12 @@ class Model {
   }
 
   validateHotels(hotelId, setErrorMessage) {
-    if (hotelId === -1) {
-      setErrorMessage(prevState => {
-        return { ...prevState, hotels: 'Please select a hotel' };
-      });
-      return false;
-    }
-    return true;
-  }
-
-  validateHotels(hotelId) {
-    if (hotelId === -1) {
+    if (!(hotelId > -1)) {
+      if (setErrorMessage) {
+        setErrorMessage(prevState => {
+          return { ...prevState, hotels: 'Please select a hotel' };
+        });
+      }
       return false;
     }
     return true;
@@ -196,16 +164,11 @@ class Model {
 
   validateNights(nights, setErrorMessage) {
     if (nights === -1) {
-      setErrorMessage(prevState => {
-        return { ...prevState, nights: 'Please select number of nights' };
-      });
-      return false;
-    }
-    return true;
-  }
-
-  validateNights(nights) {
-    if (nights === -1) {
+      if (setErrorMessage) {
+        setErrorMessage(prevState => {
+          return { ...prevState, nights: 'Please select number of nights' };
+        });
+      }
       return false;
     }
     return true;
