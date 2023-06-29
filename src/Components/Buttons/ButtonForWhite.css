@@ -1,0 +1,21 @@
+.button__for_white {
+    width: fit-content;
+}
+
+.button__for_white button {
+    width: 100%;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: var(--main__light);
+    border: 2px solid var(--main__light);
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+
+.button__for_white button:hover {
+    background-color: var(--main__light);
+    color: var(--white);
+}

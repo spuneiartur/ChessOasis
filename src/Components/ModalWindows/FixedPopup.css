@@ -1,0 +1,70 @@
+.booknow__preview_wrapper {
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    background-color: rgba(250, 250, 250, 0.85);
+    width: fit-content;
+    height: fit-content;
+    z-index: 101;
+    padding: 25px 30px;
+    border: 2px solid var(--main__dark);
+    border-radius: 15px;
+    transition: all 0.5s ease;
+
+
+
+
+}
+
+
+.booknow__preview_wrapper.close {
+    transform: translateX(-200%);
+}
+
+.close__button_wrapper {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    width: fit-content;
+    height: fit-content;
+    transform: all 0.5s ease;
+}
+
+
+
+.close__button {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.close__button_line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--main__dark);
+    transform-origin: center;
+    top: 50%;
+    left: 0;
+    transition: transform 0.3s ease;
+
+}
+
+.close__button_line:first-child {
+    transform: rotate(45deg);
+}
+
+.close__button_line:last-child {
+    transform: rotate(-45deg);
+}
+
+.close__button:hover :first-child {
+    transform: rotate(-45deg);
+
+}
+
+.close__button:hover :last-child {
+    transform: rotate(45deg);
+
+}

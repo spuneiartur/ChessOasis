@@ -1,0 +1,12 @@
+.book__form_price--container {
+    margin: 25px auto 0 0;
+    font-size: 18px;
+
+
+}
+
+.book__form_price--text {
+    text-transform: uppercase;
+}
+
+.book__form_price--value {}

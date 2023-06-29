@@ -1,0 +1,17 @@
+.stars__container {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    gap: 3px;
+    margin: 5px 0;
+}
+
+.star__icon {
+    color: var(--white);
+    font-size: 30px;
+}
+
+.star__icon_full {
+    color: yellow;
+
+}

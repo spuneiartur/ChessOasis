@@ -1,0 +1,111 @@
+[
+  {
+    "id": 1,
+    "name": "Aqua Luxury Suites ",
+    "location": "Santorini, Greece",
+    "images": [
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/main.jpg",
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/img1.jpg",
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/img2.jpg",
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/img3.jpg",
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/img4.jpg",
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/img5.jpg",
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/img6.jpg",
+      "/Assets/Hotels/Aqua Luxury Suites Santorini/img7.jpg"
+    ],
+    "stars": 4,
+    "mainImg": "/Assets/Hotels/Aqua Luxury Suites Santorini/main.jpg",
+    "price": 1000,
+    "breakfastPrice": 10
+  },
+  {
+    "id": 2,
+    "name": "Grand Hyatt",
+    "location": "Bali, Indonesia",
+    "images": [
+      "/Assets/Hotels/Grand Hyatt Bali/main.jpg",
+      "/Assets/Hotels/Grand Hyatt Bali/img1.jpg",
+      "/Assets/Hotels/Grand Hyatt Bali/img2.jpg",
+      "/Assets/Hotels/Grand Hyatt Bali/img3.jpg",
+      "/Assets/Hotels/Grand Hyatt Bali/img4.jpg",
+      "/Assets/Hotels/Grand Hyatt Bali/img5.jpg",
+      "/Assets/Hotels/Grand Hyatt Bali/img6.jpg"
+    ],
+    "stars": 5,
+    "mainImg": "/Assets/Hotels/Grand Hyatt Bali/main.jpg",
+    "price": 1200,
+    "breakfastPrice": 10
+  },
+  {
+    "id": 3,
+    "name": "Hotel Helios Costa Tropical",
+    "location": "Granada, Spain",
+    "images": [
+      "/Assets/Hotels/Hotel Helios Costa Tropical Granada/main.jpg",
+      "/Assets/Hotels/Hotel Helios Costa Tropical Granada/img1.jpg",
+      "/Assets/Hotels/Hotel Helios Costa Tropical Granada/img2.jpg",
+      "/Assets/Hotels/Hotel Helios Costa Tropical Granada/img3.jpg",
+      "/Assets/Hotels/Hotel Helios Costa Tropical Granada/img4.jpg",
+      "/Assets/Hotels/Hotel Helios Costa Tropical Granada/img5.jpg",
+      "/Assets/Hotels/Hotel Helios Costa Tropical Granada/img6.jpg"
+    ],
+    "stars": 3,
+    "mainImg": "/Assets/Hotels/Hotel Helios Costa Tropical Granada/main.jpg",
+    "price": 800,
+    "breakfastPrice": 10
+  },
+  {
+    "id": 4,
+    "name": "Meliá Palma Bay",
+    "location": "Palma de Mallorca, Spain",
+    "images": [
+      "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/main.jpg",
+      "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/img1.jpg",
+      "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/img2.jpg",
+      "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/img3.jpg",
+      "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/img4.jpg",
+      "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/img5.jpg",
+      "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/img6.jpg"
+    ],
+    "stars": 4,
+    "mainImg": "/Assets/Hotels/Melia Palma Bay Palma de Mallorca/main.jpg",
+    "price": 900,
+    "breakfastPrice": 12
+  },
+  {
+    "id": 5,
+    "name": "Rixos Premium",
+    "location": "Antalya, Turkey",
+    "images": [
+      "/Assets/Hotels/Rixos Premium Antalya/main.jpg",
+      "/Assets/Hotels/Rixos Premium Antalya/img1.jpg",
+      "/Assets/Hotels/Rixos Premium Antalya/img2.jpg",
+      "/Assets/Hotels/Rixos Premium Antalya/img3.jpg",
+      "/Assets/Hotels/Rixos Premium Antalya/img4.jpg",
+      "/Assets/Hotels/Rixos Premium Antalya/img5.jpg",
+      "/Assets/Hotels/Rixos Premium Antalya/img6.jpg",
+      "/Assets/Hotels/Rixos Premium Antalya/img7.jpg"
+    ],
+    "stars": 5,
+    "mainImg": "/Assets/Hotels/Rixos Premium Antalya/main.jpg",
+    "price": 1500,
+    "breakfastPrice": 15
+  },
+  {
+    "id": 6,
+    "name": "Sensei Lanai",
+    "location": "Hawaii, USA",
+    "images": [
+      "/Assets/Hotels/Sensei Lanai Hawaii/main.jpg",
+      "/Assets/Hotels/Sensei Lanai Hawaii/img1.jpg",
+      "/Assets/Hotels/Sensei Lanai Hawaii/img2.jpg",
+      "/Assets/Hotels/Sensei Lanai Hawaii/img3.jpg",
+      "/Assets/Hotels/Sensei Lanai Hawaii/img4.jpg",
+      "/Assets/Hotels/Sensei Lanai Hawaii/img5.jpg"
+    ],
+    "stars": 4,
+    "mainImg": "/Assets/Hotels/Sensei Lanai Hawaii/main.jpg",
+    "price": 1100,
+    "breakfastPrice": 8
+  }
+]

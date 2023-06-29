@@ -1,0 +1,14 @@
+.label {
+    background-color: var(--main__light);
+    padding: 15px 5px;
+}
+
+.card__label.show {
+    transform: translateY(0);
+}
+
+.label__text {
+    font-family: var(--font__roboto);
+    font-size: 18px;
+    color: var(--white);
+}

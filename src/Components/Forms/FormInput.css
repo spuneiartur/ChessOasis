@@ -1,0 +1,40 @@
+.form__input_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: var(--main__dark);
+    margin: 0 0 25px 0;
+    --input__color: #f4f1f1;
+}
+
+.form__input_label--wrapper {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-family: var(--font__text);
+    text-align: start;
+
+}
+
+.form__input_label--wrapper label {
+    margin: 0 0 0 10px;
+}
+
+.form__input_container input {
+    padding: 15px 12px;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: var(--input__color);
+    width: 100%;
+
+}
+
+.form__input_container input[type='number'] {
+    max-width: 80px;
+}
+
+.form__input_container input.error {
+    border: 2px solid orangered;
+    color: orangered;
+    box-shadow: 1px 2px 0 0 rgb(236, 173, 150);
+}

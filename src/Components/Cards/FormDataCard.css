@@ -1,0 +1,17 @@
+.booknow__preview_content {
+    color: var(--main__dark);
+    line-height: 1.3;
+    font-size: 20px;
+    min-width: 300px;
+    /* background-color: rgba(250, 250, 250, 0.85); */
+}
+
+.booknow__preview_list {}
+
+.booknow__preview_item {}
+
+.booknow__preview_item span {
+    font-weight: 700;
+    font-style: italic;
+
+}

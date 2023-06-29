@@ -1,0 +1,9 @@
+/* palette and fonts are included here for informational purposes */
+:root {
+    --main__dark: #015859;
+    --main__light: #68a691;
+    --white: #fafafa;
+    --white__transp: rgba(250, 250, 250, 0.85);
+    --font__title: 'Roboto', sans-serif;
+    --font__text: 'Open Sans', sans-serif;
+}
