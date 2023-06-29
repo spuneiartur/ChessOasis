@@ -212,12 +212,21 @@ export default function BookForm({
   // Number of nights validation -----------------------------------
   const nightsSelectOnChange = e => {
     previewOpenOnce();
-    setFormData(prevState => {
-      return {
-        ...prevState,
-        nights: +e.target.value,
-      };
-    });
+    if (+e.target.value === -1) {
+      setFormData(prevState => {
+        return {
+          ...prevState,
+          nights: undefined,
+        };
+      });
+    } else {
+      setFormData(prevState => {
+        return {
+          ...prevState,
+          nights: +e.target.value,
+        };
+      });
+    }
 
     setError(prevState => {
       return {
