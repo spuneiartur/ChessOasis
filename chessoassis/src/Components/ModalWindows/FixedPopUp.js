@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './FixedPopup.css';
 
 export default function FixedPopup({

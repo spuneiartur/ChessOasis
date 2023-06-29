@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import AnimationDots from '../LoadingAnimations/AnimationDots';
 import './FormDataCard.css';
 

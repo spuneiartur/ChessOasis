@@ -8,7 +8,6 @@ export default function AboutUs({ data }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const onClickChangeSlideNext = e => {
-    console.log('next');
     setCurrentSlide(currentSlide + 1);
   };
 

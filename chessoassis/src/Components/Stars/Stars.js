@@ -1,5 +1,4 @@
 import './Stars.css';
-import { FaRegStar } from 'react-icons/fa6';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Stars(props) {
@@ -15,8 +14,4 @@ export default function Stars(props) {
   }
 
   return <div className="stars__container">{stars}</div>;
-}
-
-{
-  /* <FaRegStar key={i} className="star__icon" /> */
 }
