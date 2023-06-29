@@ -1,25 +1,25 @@
 import { useState, useEffect } from 'react';
 import './AnimationDots.css';
 
-export default function AnimationDots({}) {
-  const [text, setText] = useState('.');
+export default function AnimationDots({ text = '' }) {
+  const [dots, setDots] = useState(`${text}.`);
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setText(prevText => {
+      setDots(prevText => {
         switch (prevText) {
-          case '.':
-            return '..';
-          case '..':
-            return '...';
-          case '...':
-            return '.';
+          case `${text}.`:
+            return `${text}..`;
+          case `${text}..`:
+            return `${text}...`;
+          case `${text}....`:
+            return `${text}.`;
           default:
-            return '.';
+            return `${text}.`;
         }
       });
     }, 500);
     return () => clearInterval(intervalId);
   }, []);
 
-  return <span> {text}</span>;
+  return <span> {dots}</span>;
 }

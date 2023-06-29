@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './Controller.css';
 import Welcome from '../Pages/Welcome/Welcome';
 import Hotels from '../Pages/Hotels/Hotels';
-import ModalSlider from '../Components/ModalWindows/ModalSlider';
+import ModalSlider from '../Components/ModalWindows/ModalWindow';
 import Deals from '../Pages/Deals/Deals';
 import AboutUs from '../Pages/AboutUs/AboutUs';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -12,16 +12,19 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import BookNow from '../Pages/BookNow/BookNow';
 import Testimonials from '../Pages/Testimonials/Testimonials';
 import Footer from '../Components/Footers/Footer';
+import HotelSlider from '../Components/Sliders/HotelSlider';
 import model from './Model';
 
 // This exports the whole icon packs for Brand and Solid and Regular.
 library.add(fas, far, fab);
 
+// TO DO: Add a section title to form
+// TO DO: Form submition (You will be contacted soon 😁)
 function Controller() {
   // States
-  const [isSliderOpen, setIsSliderOpen] = useState(false);
+
   const [hotels, setHotels] = useState([]);
-  const [currentHotel, setCurrentHotel] = useState({});
+
   const [advantages, setAdvantages] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
   const [formData, setFormData] = useState({});
@@ -30,24 +33,10 @@ function Controller() {
     model.initApplication(setHotels, setAdvantages, setTestimonials);
   }, []);
 
-  const openSlider = hotel => {
-    setCurrentHotel(hotel);
-    setIsSliderOpen(true);
-  };
-
-  const closeSlider = e => {
-    if (e.currentTarget === e.target) {
-      setIsSliderOpen(false);
-    }
-  };
-
   return (
     <div className="App wrapper min-h-screen block">
-      {isSliderOpen && (
-        <ModalSlider closeSlider={closeSlider} hotel={currentHotel} />
-      )}
       <Welcome />
-      <Hotels openSlider={openSlider} hotels={hotels} />
+      <Hotels hotels={hotels} />
       <Deals />
       <AboutUs data={advantages} />
       <BookNow

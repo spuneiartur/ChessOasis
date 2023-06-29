@@ -15,8 +15,6 @@ export default function HotelSlider({ hotel }) {
     '/Assets/Hotels/Sensei Lanai Hawaii/img5.jpg',
   ];
 
-  console.log(hotel);
-
   const onClickRightHandler = () => {
     if (currentSlide === hotel.images.length - 1) {
       setCurrentSlide(0);

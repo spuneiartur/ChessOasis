@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import BookForm from '../../Components/Forms/BookForm';
 import './BookNow.css';
+import SectionHeader from '../../Components/SectionHeader/SectionHeader';
+import PreviewCard from '../../Components/Cards/FormDataCard';
 
 export default function BookNow({
   hotels,
@@ -18,6 +20,10 @@ export default function BookNow({
 
   return (
     <section className="booknow__section section" id="booknow-section">
+      <SectionHeader
+        title={'Book Now'}
+        text={'Secure Your Reservation Today'}
+      />
       <div className="booknow__container _container">
         <div className="booknow__content">
           <div className="book__now_image _ibg">
@@ -29,7 +35,6 @@ export default function BookNow({
           </div>
           <div className="booknow__form_box">
             <BookForm
-              title={'Book Now'}
               hotels={hotels}
               setSelectedHotel={setSelectedHotel}
               formData={formData}

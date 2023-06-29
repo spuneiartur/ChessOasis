@@ -9,6 +9,7 @@ export default function FormInput({
   defaultValue,
   errorMessage = undefined,
   onChange,
+  style,
 }) {
   const [checked, setChecked] = useState(defaultValue);
 
@@ -17,7 +18,7 @@ export default function FormInput({
     setChecked(e.target.checked);
   };
   return (
-    <div className="checkbox__container">
+    <div className="checkbox__container" style={style}>
       <label htmlFor="breakfast-checkbox">
         <input
           type="checkbox"

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ButtonForWhite from '../Buttons/ButtonForWhite';
-import AnimationDots from '../LoadingAnimations/AnimationDots';
 import './BookForm.css';
 import ComputedBookPrice from '../ComputedPrice/ComputedBookPrice';
-
 import FormInput from './FormInput';
 import FormCheckBox from './FormCheckBox';
 import FormSelect from './FormSelect';
+import FixedPopup from '../ModalWindows/FixedPopUp';
+import FormDataCard from '../Cards/FormDataCard';
 
 export default function BookForm({
   title,
@@ -24,6 +24,8 @@ export default function BookForm({
   validateNights,
   getHotelPrice,
 }) {
+  const [previewIsActive, setPreviewIsActive] = useState(false);
+  const [previewOnceOpened, setPreviewOnceOpened] = useState(false);
   const [animationIsActive, setAnimationIsActive] = useState(false);
   const [error, setError] = useState({});
   const [price, setPrice] = useState(null);
@@ -44,6 +46,19 @@ export default function BookForm({
   useEffect(() => {
     checkPrice();
   }, [formData]);
+
+  const openPreviewCardOnClick = e => {
+    e.preventDefault();
+    if (previewIsActive) setPreviewIsActive(false);
+    else setPreviewIsActive(true);
+  };
+
+  const previewOpenOnce = () => {
+    if (!previewOnceOpened) {
+      setPreviewIsActive(true);
+      setPreviewOnceOpened(true);
+    }
+  };
 
   const checkPrice = () => {
     if (error.hotels || error.nights || error.guests) {
@@ -70,6 +85,7 @@ export default function BookForm({
 
   // Name input validation -----------------------------------
   const nameInputOnBlur = e => {
+    previewOpenOnce();
     setError(prevState => {
       return {
         ...prevState,
@@ -89,6 +105,7 @@ export default function BookForm({
 
   // Check in date validation -----------------------------------
   const checkInputOnBlur = e => {
+    previewOpenOnce();
     setError(prevState => {
       return {
         ...prevState,
@@ -108,6 +125,7 @@ export default function BookForm({
 
   // No of guests date validation -----------------------------------
   const guestsInputOnBlur = e => {
+    previewOpenOnce();
     setError(prevState => {
       return {
         ...prevState,
@@ -136,6 +154,7 @@ export default function BookForm({
 
   // Hotels validation ---------------------------------------------
   const hotelSelectOnChange = e => {
+    previewOpenOnce();
     let selectedHotel = hotels.find(hotel => hotel.id === +e.target.value);
     selectedHotel = selectedHotel ? selectedHotel : {};
 
@@ -158,6 +177,7 @@ export default function BookForm({
 
   // Number of nights validation -----------------------------------
   const nightsSelectOnChange = e => {
+    previewOpenOnce();
     setFormData(prevState => {
       return {
         ...prevState,
@@ -174,8 +194,20 @@ export default function BookForm({
   };
 
   return (
-    <form className="book__form">
-      <h2 className="book__form_title">{title}</h2>
+    <form className="book__form" noValidate>
+      <FixedPopup
+        previewIsActive={previewIsActive}
+        setPreviewIsActive={setPreviewIsActive}
+        children={
+          <FormDataCard
+            data={formData}
+            price={price}
+            currency={'RON'}
+            hotels={hotels}
+          />
+        }
+      />
+      {title && <h2 className="book__form_title">{title}</h2>}
       <FormInput
         label={'Full Name'}
         type={'text'}
@@ -249,15 +281,22 @@ export default function BookForm({
           setFormData({ ...formData, breakfast: e.target.checked })
         }
       />
+
       <ComputedBookPrice
         price={price}
         animationIsActive={animationIsActive}
         currency={'RON'}
       />
-      <ButtonForWhite
-        text={'Submit'}
-        style={{ margin: '50px 0 0 0', width: '100%' }}
-      />
+      <div className="book__form_buttons ">
+        <button
+          type="button"
+          className="book__form_preview--btn"
+          onClick={openPreviewCardOnClick}
+        >
+          Preview
+        </button>
+        <ButtonForWhite text={'Submit'} style={{ flex: '1 1 70%' }} />
+      </div>
     </form>
   );
 }
