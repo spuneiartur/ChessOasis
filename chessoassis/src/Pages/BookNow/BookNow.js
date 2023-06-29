@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import BookForm from '../../Components/Forms/BookForm';
 import './BookNow.css';
 import SectionHeader from '../../Components/SectionHeader/SectionHeader';
-import PreviewCard from '../../Components/Cards/FormDataCard';
 
 export default function BookNow({
   hotels,
@@ -14,6 +13,7 @@ export default function BookNow({
   validateHotels,
   validateNights,
   getHotelPrice,
+  validateEntireData,
 }) {
   const [selectedHotel, setSelectedHotel] = useState({});
   const defaultImg = '/Assets/BookNow/form_img.jpg';
@@ -47,6 +47,7 @@ export default function BookNow({
               validateGuests={validateGuests}
               validateHotels={validateHotels}
               validateNights={validateNights}
+              validateEntireData={validateEntireData}
               getHotelPrice={getHotelPrice}
             />
           </div>

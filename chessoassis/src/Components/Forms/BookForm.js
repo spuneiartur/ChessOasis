@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import ButtonForWhite from '../Buttons/ButtonForWhite';
 import './BookForm.css';
 import ComputedBookPrice from '../ComputedPrice/ComputedBookPrice';
@@ -7,6 +7,8 @@ import FormCheckBox from './FormCheckBox';
 import FormSelect from './FormSelect';
 import FixedPopup from '../ModalWindows/FixedPopUp';
 import FormDataCard from '../Cards/FormDataCard';
+import ModalWindow from '../ModalWindows/ModalWindow';
+import BookConfirmation from '../ModalWindows/BookConfirmation';
 
 export default function BookForm({
   title,
@@ -17,11 +19,13 @@ export default function BookForm({
   nightsDefaultValue,
   guestsDefaultValue,
   breakfastDefaultValue,
+  hotelIdDefaultValue = -1,
   validateName,
   validateCheckIn,
   validateGuests,
   validateHotels,
   validateNights,
+  validateEntireData,
   getHotelPrice,
 }) {
   const [previewIsActive, setPreviewIsActive] = useState(false);
@@ -30,7 +34,8 @@ export default function BookForm({
   const [error, setError] = useState({});
   const [price, setPrice] = useState(null);
   const [errorMessage, setErrorMessage] = useState({});
-
+  const [confirmationIsActive, setConfirmationIsActive] = useState(false);
+  const formRef = useRef(null);
   useEffect(() => {
     setAnimationIsActive(true);
     setFormData(prevState => {
@@ -46,6 +51,34 @@ export default function BookForm({
   useEffect(() => {
     checkPrice();
   }, [formData]);
+
+  const sumbitOnClick = e => {
+    e.preventDefault();
+
+    if (validateEntireData(formData, setError, setErrorMessage)) {
+      setConfirmationIsActive(true);
+    }
+  };
+
+  const closeModalWindow = e => {
+    if (e.currentTarget === e.target) {
+      setConfirmationIsActive(false);
+      formRef.current.reset();
+      setFormData({
+        name: '',
+        hotelId: hotelIdDefaultValue,
+        checkIn: undefined,
+        nights: nightsDefaultValue,
+        guests: guestsDefaultValue,
+        breakfast: breakfastDefaultValue,
+      });
+      setPreviewIsActive(false);
+      setError({});
+      setErrorMessage({});
+      setPrice(null);
+      setAnimationIsActive(true);
+    }
+  };
 
   const openPreviewCardOnClick = e => {
     e.preventDefault();
@@ -84,6 +117,7 @@ export default function BookForm({
   };
 
   // Name input validation -----------------------------------
+
   const nameInputOnBlur = e => {
     previewOpenOnce();
     setError(prevState => {
@@ -194,7 +228,28 @@ export default function BookForm({
   };
 
   return (
-    <form className="book__form" noValidate>
+    <form ref={formRef} className="book__form" noValidate>
+      {confirmationIsActive && (
+        <ModalWindow
+          confirmationIsActive={confirmationIsActive}
+          closeSlider={closeModalWindow}
+          children={
+            <BookConfirmation
+              text={
+                'You will be contacted soon! Thank you for your reservation!'
+              }
+              children={
+                <FormDataCard
+                  data={formData}
+                  price={price}
+                  currency={'RON'}
+                  hotels={hotels}
+                />
+              }
+            />
+          }
+        />
+      )}
       <FixedPopup
         previewIsActive={previewIsActive}
         setPreviewIsActive={setPreviewIsActive}
@@ -295,7 +350,11 @@ export default function BookForm({
         >
           Preview
         </button>
-        <ButtonForWhite text={'Submit'} style={{ flex: '1 1 70%' }} />
+        <ButtonForWhite
+          text={'Submit'}
+          style={{ flex: '1 1 70%' }}
+          onClick={sumbitOnClick}
+        />
       </div>
     </form>
   );

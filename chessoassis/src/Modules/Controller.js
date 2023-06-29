@@ -49,6 +49,7 @@ function Controller() {
         validateHotels={model.validateHotels}
         validateNights={model.validateNights}
         getHotelPrice={model.getHotelPrice}
+        validateEntireData={model.validateEntireData}
       />
       <Testimonials data={testimonials} />
       <Footer />

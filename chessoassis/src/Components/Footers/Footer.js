@@ -28,7 +28,7 @@ export default function Footer() {
           world.
         </p>
         <p>
-          Copyright © {new Date().getFullYear()} ChessOassis.co. All rights
+          Copyright © {new Date().getFullYear()} ChessOasis.co. All rights
           reserved{' '}
         </p>
       </div>

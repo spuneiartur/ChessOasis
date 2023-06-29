@@ -8,7 +8,7 @@
 }
 
 .label__text {
+    font-family: var(--font__roboto);
     font-size: 18px;
     color: var(--white);
-
 }

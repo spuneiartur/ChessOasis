@@ -18,6 +18,7 @@ class Model {
     this.validateGuests = this.validateGuests.bind(this);
     this.validateHotels = this.validateHotels.bind(this);
     this.validateNights = this.validateNights.bind(this);
+    this.validateEntireData = this.validateEntireData.bind(this);
   }
 
   initApplication(setHotels, setAdvantages, setTestimonials) {
@@ -45,7 +46,80 @@ class Model {
     return price;
   }
 
+  validateEntireData(formData, setError, setErrorMessage) {
+    const nameIsValid = this.validateInputedName(
+      formData.name,
+      setErrorMessage
+    );
+
+    setError(prevState => {
+      return {
+        ...prevState,
+        name: !nameIsValid,
+      };
+    });
+    const checkInIsValid = this.validateCheckInDate(
+      formData.checkIn,
+      setErrorMessage
+    );
+
+    setError(prevState => {
+      return {
+        ...prevState,
+        checkIn: !checkInIsValid,
+      };
+    });
+
+    const guestsIsValid = this.validateGuests(formData.guests, setErrorMessage);
+
+    setError(prevState => {
+      return {
+        ...prevState,
+        guests: !guestsIsValid,
+      };
+    });
+
+    const hotelsIsValid = this.validateHotels(
+      formData.hotelId,
+      setErrorMessage
+    );
+
+    setError(prevState => {
+      return {
+        ...prevState,
+        hotels: !hotelsIsValid,
+      };
+    });
+
+    const nightsIsValid = this.validateNights(formData.nights, setErrorMessage);
+
+    setError(prevState => {
+      return {
+        ...prevState,
+        nights: !nightsIsValid,
+      };
+    });
+
+    return (
+      nameIsValid &&
+      checkInIsValid &&
+      guestsIsValid &&
+      hotelsIsValid &&
+      nightsIsValid
+    );
+  }
+
   validateInputedName(name, setErrorMessage) {
+    if (name === undefined) {
+      if (setErrorMessage) {
+        setErrorMessage(prevState => {
+          return { ...prevState, name: 'Please enter your name' };
+        });
+
+        return false;
+      }
+      return true;
+    }
     if (name.length === 0) {
       if (setErrorMessage) {
         setErrorMessage(prevState => {
@@ -77,6 +151,16 @@ class Model {
   }
 
   validateCheckInDate(date, setErrorMessage) {
+    if (date === undefined) {
+      if (setErrorMessage) {
+        setErrorMessage(prevState => {
+          return { ...prevState, checkIn: 'Please enter your check-in date' };
+        });
+
+        return false;
+      }
+      return true;
+    }
     if (date.length === 0) {
       if (setErrorMessage) {
         setErrorMessage(prevState => {
@@ -174,5 +258,5 @@ class Model {
     return true;
   }
 }
-
-export default new Model();
+const instance = new Model();
+export default instance;
