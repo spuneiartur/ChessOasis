@@ -39,7 +39,7 @@ export default function BookNow({
               setSelectedHotel={setSelectedHotel}
               formData={formData}
               setFormData={setFormData}
-              nightsDefaultValue={7}
+              nightsDefaultValue={10}
               guestsDefaultValue={2}
               breakfastDefaultValue={false}
               validateName={validateName}

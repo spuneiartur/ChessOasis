@@ -23,6 +23,7 @@ export default function FormSelect({
         required={required}
         defaultValue={defaultValue}
         onChange={onChange}
+        className={error ? 'error' : ''}
       >
         <option value={-1}>--Please choose an option--</option>
         {children}

@@ -27,3 +27,8 @@
     cursor: pointer;
 
 }
+
+.form__select_container select.error {
+    border: 2px solid orangered;
+    box-shadow: 1px 2px 0 0 rgb(236, 173, 150);
+}

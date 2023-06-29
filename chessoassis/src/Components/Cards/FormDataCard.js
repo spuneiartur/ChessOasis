@@ -36,7 +36,14 @@ export default function FormDataCard({ data, price, currency, hotels }) {
         </li>
         <li className="booknow__preview_item">
           Number of nights:
-          <span> {data.nights ? data.nights : <AnimationDots />}</span>
+          <span>
+            {' '}
+            {data.nights && data.nights !== -1 ? (
+              data.nights
+            ) : (
+              <AnimationDots />
+            )}
+          </span>
         </li>
         <li className="booknow__preview_item">
           Breakfast: <span> {data.breakfast ? 'Yes' : 'No'}</span>
